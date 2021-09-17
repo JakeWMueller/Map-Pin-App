@@ -21,7 +21,7 @@ mongoose
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
-app.use(express.static(path.join(__dirname, "/mappinapp/build")));
+app.use(express.static(path.join(__dirname, "/api/mappinapp/build")));
 
 app.get('*', function (req, res) {
   const index = path.join(__dirname, '/api/mappinapp/build', 'index.html');
