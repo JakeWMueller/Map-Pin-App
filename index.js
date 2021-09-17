@@ -24,7 +24,8 @@ app.use("/api/pins", pinRoute);
 // app.use(express.static(path.join(__dirname, "/api/mappinapp/build")));
 
 app.get('*', function (req, res) {
-  const index = path.join(__dirname, '/api/mappinapp/build', 'index.html');
+  const index = path.join(__dirname, '/mappinapp/build', 'index.html');
+  console.log(__dirname);
   res.sendFile(index);
 });
 
