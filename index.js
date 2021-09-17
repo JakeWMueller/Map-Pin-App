@@ -21,10 +21,10 @@ mongoose
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
-app.use(express.static(path.join(__dirname, "/api/mappinapp/build")));
+app.use(express.static(path.join(__dirname, "/mappinapp/build")));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, "/api/mappinapp/build", "index.html"));
+  res.sendFile(path.join(__dirname, "/mappinapp/build", "index.html"));
 })
 
 app.listen(process.env.PORT || 5000, () => {
