@@ -21,13 +21,13 @@ mongoose
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
-// app.use(express.static(path.join(__dirname, "/api/mappinapp/build")));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'mappinapp', 'build')));
 
-app.get('*', function (req, res) {
-  const index = path.join(__dirname, '/mappinapp/build', 'index.html');
-  console.log(__dirname);
-  res.sendFile(index);
-});
+  app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'mappinapp', 'build', 'index.html'));
+  });
+};
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");
