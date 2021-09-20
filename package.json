@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "client": "npm run start --prefix mappinapp",
-    "heroku-postbuild": "cd mappinapp && npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "cd mappinapp && npm install --prefix mappinapp && npm run build --prefix mappinapp"
   },
   "keywords": [],
   "author": "",
