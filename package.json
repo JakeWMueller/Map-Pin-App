@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "client": "npm run start --prefix mappinapp",
+    "client": "npm run start mappinapp",
     "heroku-postbuild": "cd mappinapp && npm install && npm run build"
   },
   "keywords": [],

@@ -22,10 +22,10 @@ app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'mappinapp', 'build')));
+  app.use(express.static(path.join(__dirname, '/api/mappinapp/build')));
 
   app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'mappinapp', 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '/api/mappinapp/build', 'index.html'));
   });
 };
 
